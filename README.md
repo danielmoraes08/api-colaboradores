@@ -111,6 +111,6 @@ A API consulta o ViaCEP e salva o endereço completo automaticamente:
 | **Daniel Moraes** | Estrutura do projeto, `server.js`, `package.json`, configuração geral do Express |
 | **Murilo Morales** | Lógica de leitura e escrita no JSON (`db.js`) e o arquivo de dados |
 | **Vitor Reis** | Middleware de validação — bloqueia CPF duplicado, e-mail inválido e campos vazios |
-| **Gustavo Henrique** | Integração com o ViaCEP (`viaCep.js`) |
+| **Gustavo Henrique** | Integração com o ViaCEP (`viaCep.js`) - Viabilidade e Validação |
 | **Ryan Monteiro** | Controller com toda a lógica do CRUD (`colaboradoresController.js`) |
 | **Rafael Queiroz** | Definição das rotas, testes manuais e documentação |
