@@ -59,10 +59,10 @@ npm run dev
 POST /colaboradores
 
 {
-  "nome": "Gustavo Lindo",
+  "nome": "Roberto Guedes",
   "cargo": "Desenvolvedora Backend",
   "cpf": "12345678901",
-  "email": "daniel.moraes@empresa.com",
+  "email": "roberto.guedes@empresa.com",
   "cep": "01310100",
   "numero": "1578"
 }
@@ -75,10 +75,10 @@ A API consulta o ViaCEP e salva o endereço completo automaticamente:
   "mensagem": "Colaborador cadastrado com sucesso!",
   "colaborador": {
     "id": "uuid-gerado-automaticamente",
-    "nome": "Gustavo Lindo",
+    "nome": "Roberto Guedes",
     "cargo": "Desenvolvedora Backend",
     "cpf": "12345678901",
-    "email": "daniel.moraes@empresa.com",
+    "email": "roberto.guedes@empresa.com",
     "endereco": {
       "cep": "01310-100",
       "logradouro": "Avenida Paulista",
