@@ -5,22 +5,28 @@ const {
   cadastrarColaborador,
   listarColaboradores,
   buscarColaborador,
-  // atualizarColaborador,  <- ainda não implementado
-  // desativarColaborador,  <- ainda não implementado
+  atualizarColaborador,
+  desativarColaborador,
 } = require("../controllers/colaboradoresController");
 
-const { validarCadastro } = require("../middlewares/validacao");
+const { validarCadastro, validarAtualizacao } = require("../middlewares/validacao");
 
-// POST /colaboradores — Cadastrar
+// POST   /colaboradores           → Cadastrar
 router.post("/", validarCadastro, cadastrarColaborador);
 
-// GET /colaboradores — Listar todos
+// GET    /colaboradores           → Listar todos (ativos por padrão)
+// GET    /colaboradores?status=todos → Listar ativos e inativos
 router.get("/", listarColaboradores);
 
-// GET /colaboradores/:identificador — Buscar por ID ou CPF
+// GET    /colaboradores/:identificador → Buscar por ID ou CPF
 router.get("/:identificador", buscarColaborador);
 
-// TODO: adicionar rota PUT e PATCH para atualizar (aguardando Ryan terminar o controller)
-// TODO: adicionar rota DELETE para soft delete
+// PUT    /colaboradores/:id       → Atualizar completo
+// PATCH  /colaboradores/:id       → Atualizar parcial
+router.put("/:id", validarAtualizacao, atualizarColaborador);
+router.patch("/:id", validarAtualizacao, atualizarColaborador);
+
+// DELETE /colaboradores/:id       → Soft Delete (status → Inativo)
+router.delete("/:id", desativarColaborador);
 
 module.exports = router;
