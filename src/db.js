@@ -1,8 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const DB_PATH = path.join(__dirname, "../data/colaboradores.json");
-
+const DB_PATH = path.join(__dirname, "./data/colaboradores.json");
 /**
  * Lê todos os colaboradores do arquivo JSON.
  * @returns {Array} Lista de colaboradores
