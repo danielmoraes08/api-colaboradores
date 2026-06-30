@@ -22,7 +22,7 @@ A ideia surgiu de um problema real: uma startup que precisa cadastrar seus funci
 Precisa ter o Node.js instalado (v18 ou superior).
 
 ```bash
-git clone https://github.com/SEU_USUARIO/api-colaboradores.git
+git clone https://github.com/danielmoraes08/api-colaboradores.git
 cd api-colaboradores
 npm install
 npm start
