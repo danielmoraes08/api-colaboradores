@@ -60,7 +60,7 @@ POST /colaboradores
 
 {
   "nome": "Roberto Guedes",
-  "cargo": "Desenvolvedora Backend",
+  "cargo": "Desenvolvedor Backend",
   "cpf": "12345678901",
   "email": "roberto.guedes@empresa.com",
   "cep": "01310100",
