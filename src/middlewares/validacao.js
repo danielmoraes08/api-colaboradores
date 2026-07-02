@@ -150,9 +150,19 @@ function validarAtualizacao(req, res, next) {
   const erros = [];
 
   if (body.cpf !== undefined) {
-    return res.status(403).json({
-      erro: "Não é permitido alterar o CPF de um colaborador cadastrado.",
-    });
+    const colaboradores = lerColaboradores();
+    const colaboradorAtual = colaboradores.find((c) => c.id === req.params.id);
+
+    if (!colaboradorAtual) {
+      return res.status(404).json({ erro: "Colaborador não encontrado." });
+    }
+
+    if (normalizarCPF(body.cpf) !== colaboradorAtual.cpf) {
+      return res.status(403).json({
+        erro: "Não é permitido alterar o CPF de um colaborador cadastrado.",
+      });
+    }
+    // CPF igual ao já cadastrado → apenas ignora, sem erro
   }
 
   if (body.email !== undefined) {
@@ -183,7 +193,6 @@ function validarAtualizacao(req, res, next) {
     return res.status(400).json({ erro: "Dados inválidos.", detalhes: erros });
   }
 
-  // Normalizar e-mail (se enviado) antes de seguir, igual já era feito com CPF no cadastro
   if (body.email !== undefined) {
     req.body.email = normalizarEmail(body.email);
   }
